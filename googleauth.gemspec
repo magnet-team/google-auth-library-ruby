@@ -28,7 +28,12 @@ Gem::Specification.new do |gem|
   gem.required_ruby_version = ">= 2.4.0"
 
   gem.add_dependency "faraday", "~> 0.12"
-  gem.add_dependency "jwt", ">= 1.4", "< 3.0"
+
+  # jwt dependency is purposefully reduced here to a lower version as
+  # we can not update jwt in Realvolve application at this moment as
+  # other gems like oauth2 have a strict dependency on the current version of
+  # the jwt gem in Realvolve
+  gem.add_dependency "jwt", "~> 0.1.8"
   gem.add_dependency "memoist", "~> 0.16"
   gem.add_dependency "multi_json", "~> 1.11"
   gem.add_dependency "os", ">= 0.9", "< 2.0"
