@@ -27,7 +27,9 @@ Gem::Specification.new do |gem|
   gem.platform      = Gem::Platform::RUBY
   gem.required_ruby_version = ">= 2.4.0"
 
-  gem.add_dependency "faraday", "~> 0.12"
+  # Faraday's dependency is purposefully reduced here for the same reason as
+  # JWT below.
+  gem.add_dependency "faraday", ">= 0.12", "< 1.0"
 
   # jwt dependency is purposefully reduced here to a lower version as
   # we can not update jwt in Realvolve application at this moment as
